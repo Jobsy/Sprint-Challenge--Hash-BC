@@ -12,6 +12,13 @@ def get_indices_of_item_weights(weights, length, limit):
     """
     YOUR CODE HERE
     """
+    # first pass
+    for i in weights:
+        for j in weights:
+            if ((i + j) == limit):
+                print([max(i, j), min(i, j)])
+                print([weights.index(max(i, j)), weights.index(min(i, j))])
+                return [weights.index(max(i, j)), weights.index(min(i, j))]
 
     return None
 
