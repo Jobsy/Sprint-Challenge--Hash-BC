@@ -42,6 +42,10 @@ BlockChain Structure:
 Blockchain is a data structure that’s useful for sharing a ledger of transactions that is universally agreed upon, but without the need for a central authority. It forms the basis for cryptocurrency, and is useful in a variety of different fields, including voting, contracts, and many others
 
 Blocks:
+Blocks are the data stored on the block chain.
+
+Chain:
+Is simply a chain of blocks
 
 Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
 
