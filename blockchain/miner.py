@@ -1,6 +1,6 @@
 import hashlib
 import requests
-
+import json
 import sys
 
 from uuid import uuid4
@@ -25,6 +25,10 @@ def proof_of_work(last_proof):
     print("Searching for next proof")
     proof = 0
     #  TODO: Your code here
+    last_hash = hashlib.sha256(str(last_proof).encode()).hexdigest()[-6:]
+
+    while valid_proof(last_hash, proof) is False:
+        proof += 1
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
@@ -40,7 +44,7 @@ def valid_proof(last_hash, proof):
     """
 
     # TODO: Your code here!
-    pass
+    return hashlib.sha256(str(proof).encode()).hexdigest()[:6] == last_hash
 
 
 if __name__ == '__main__':
